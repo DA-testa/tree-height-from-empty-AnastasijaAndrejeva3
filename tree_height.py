@@ -2,22 +2,22 @@ import sys
 import threading
 
 def compute_height(n, parents):
-    m = [[] for _ in range(n)]
+    children = [[] for _ in range(n)]
     root = None
 
     for i, parent in enumerate(parents):
         if parent == -1:
             root = i    
         else:
-            m[parent].append(i)
+            children[parent].append(i)
 
     def max_height(value):
         tree = 1
         
-        if not m[value]:
+        if not children[value]:
             return tree
         else:
-            for child in m[value]:
+            for child in children[value]:
                 tree = max(tree, max_height(child))
 
             return tree + 1
