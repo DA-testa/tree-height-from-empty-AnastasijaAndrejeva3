@@ -12,15 +12,15 @@ def compute_height(n, parents):
             children[parent].append(i)
 
     def max_height(value):
-        tree = 1
+        height = 1
         
         if not children[value]:
-            return tree
+            return height
         else:
             for child in children[value]:
-                tree = max(tree, max_height(child))
+                height = max(height, max_height(child))
 
-            return tree + 1
+            return height + 1
     return max_height(root)
 
 def main():
