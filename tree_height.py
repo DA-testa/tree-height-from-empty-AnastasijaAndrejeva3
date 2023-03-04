@@ -2,8 +2,8 @@ import sys
 import threading
 
 def compute_height(n, parents):
-    children = [[] for _ in range(n)]
-    root = None
+    #children = [[] for _ in range(n)]
+    #root = None
 
     for i in range(n):
         if parents[i] == -1:
