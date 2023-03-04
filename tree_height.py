@@ -6,10 +6,10 @@ def compute_height(n, parents):
     root = None
 
     for i, parent in enumerate(parents):
-        if parent == -1:
+        if parents == -1:
             root = i    
         else:
-            children[parents].append(i)
+            children[parents[i]].append(i)
 
     def max_height(value):
         height = 1
