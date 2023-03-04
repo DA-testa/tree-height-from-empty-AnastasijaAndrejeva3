@@ -9,7 +9,7 @@ def compute_height(n, parents):
         if parent == -1:
             root = i    
         else:
-            children[parent].append(i)
+            children[parents].append(i)
 
     def max_height(value):
         height = 1
@@ -32,6 +32,7 @@ def main():
  
         file = input()
         if "a" in file:
+            try:             
                 print("Error")
                 return      
         else:
