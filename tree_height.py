@@ -9,7 +9,7 @@ def compute_height(n, parents):
             if parents[i] == -1:
                 root = i    
             else:
-                children[parent].append(i)
+                children[parents[i]].append(i)
 
     def max_height(value):
         height = 1
@@ -31,14 +31,15 @@ def main():
     elif "F" in text:
  
         file = input()
-        if "a" in file:
-            try:             
-                print("Error")
-                return      
+        if "a" in file:            
+            print("Error")
+            return      
         else:
-            with open (file, mode="r") as file: 
-                count = int (file.readline ())
-                text = file.readline ()
+            with open (file, mode="r") as f: 
+                count = int(file.readline())
+                parents = list(map(int, f.readline().split()))
+                n = len(parents)
+                
         
     else:
         print("Ievadiet burtu 'I' vai 'F':")
