@@ -25,25 +25,25 @@ def compute_height(n, parents):
     return max_height(root)
 
 def main():
-    text = input()
+    text = input("Ievadiet datus no tastatūras:")
     if "I" in text:
         n = int(input())
         parents = list(map(int, input().split()))
     elif "F" in text:
-        fileName = input()
+        fileName = input("Ievadiet faila nosaukumu:")
         path = './test/'    
-        folder = os.path.join(path, fileName)
+        mape = os.path.join(path, fileName)
         if "a" not in fileName:
             try:
-                with open(folder) as f:
-                    n = int(f.readline())
-                    parents = list(map(int, f.readline().split()))
-            except Exception as e:
-                print("Kluda:(", str(e))
+                with open(mape) as file:
+                    n = int(file.readline())
+                    parents = list(map(int, file.readline().split()))
+            except Exception as error:
+                print("Error", str(error))
                 return
             
         else:
-            print("Kluda")
+            print("Faila nosaukumā ir kļūda")
             return
                   
     else:
