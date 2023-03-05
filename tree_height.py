@@ -1,3 +1,5 @@
+# Anastasija Andrejeva, 18.grupa, 221RDC028
+
 import sys
 import threading
 import os
