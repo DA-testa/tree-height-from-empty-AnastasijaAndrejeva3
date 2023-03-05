@@ -1,6 +1,6 @@
-
 import sys
 import threading
+import os
 
 def compute_height(n, parents):
     children = [[] for _ in range(n)]
@@ -30,11 +30,10 @@ def main():
         n = int(input())
         parents = list(map(int, input().split()))
     elif "F" in text:
- 
-	path = './test/'
-        file = input()
-        folder = path + file
-        if "a" not in file:
+        fileName = input()
+	    path = './test/'    
+        folder = os.path.join(path, fileName)
+        if "a" not in fileName:
             try:
                 with open(folder) as f:
                     n = int(f.readline())
