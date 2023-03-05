@@ -4,11 +4,11 @@ import os
 
 def compute_height(n, parents):
     children = [[] for _ in range(n)]
-    root = None
+    tree = None
 
     for i, j in enumerate(parents):
         if j == -1:
-            root = i    
+            tree = i    
         else:
             children[j].append(i)
 
@@ -22,7 +22,7 @@ def compute_height(n, parents):
                 height = max(height, max_height(child))
 
             return height + 1
-    return max_height(root)
+    return max_height(tree)
 
 def main():
     text = input("Ievadiet datus no tastatūras:")
@@ -33,7 +33,11 @@ def main():
         fileName = input("Ievadiet faila nosaukumu:")
         path = './test/'    
         mape = os.path.join(path, fileName)
-        if "a" not in fileName:
+        if "a" in fileName:
+            print("Faila nosaukumā ir kļūda")
+            return
+            
+        else:
             try:
                 with open(mape) as file:
                     n = int(file.readline())
@@ -41,10 +45,6 @@ def main():
             except Exception as error:
                 print("Error", str(error))
                 return
-            
-        else:
-            print("Faila nosaukumā ir kļūda")
-            return
                   
     else:
         print("Ievadiet burtu 'I' vai 'F':")
