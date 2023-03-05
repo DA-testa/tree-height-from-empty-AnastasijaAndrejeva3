@@ -6,7 +6,7 @@ def compute_height(n, parents):
     children = [[] for _ in range(n)]
     root = None
 
-    for i, j in in enumerate(parents):
+    for i, j in enumerate(parents):
         if j == -1:
             root = i    
         else:
