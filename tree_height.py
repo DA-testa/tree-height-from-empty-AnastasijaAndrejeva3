@@ -27,12 +27,12 @@ def compute_height(n, parents):
     return max_height(tree)
 
 def main():
-    text = input("Ievadiet datus no tastatūras:")
+    text = input()
     if "I" in text:
         n = int(input())
         parents = list(map(int, input().split()))
     elif "F" in text:
-        fileName = input("Ievadiet faila nosaukumu:")
+        fileName = input()
         path = './test/'    
         mape = os.path.join(path, fileName)
         if "a" in fileName:
